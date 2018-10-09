@@ -10,7 +10,7 @@ class BinarySearchTree {
   insert(key, value) {
     //if the tree is empty then this key being inserted is the root node of the tree
     if (this.key == null) {
-      //console.log('creating new root with key -', key);
+      console.log('creating new root with key -', key);
 
         this.key = key;
         this.value = value;
@@ -26,14 +26,14 @@ class BinarySearchTree {
         //then we can just instantiate and insert the new node 
         //as the left child of that node, passing `this` as the parent.  
         if (this.left == null) {
-          //console.log('creating new left BST with key -', key,' | parent = ', this.key);
-            this.left = new BinarySearchTree(key, value, this.key);
+          console.log('creating new left BST with key -', key,' | parent = ', this);
+            this.left = new BinarySearchTree(key, value, this);
         }
         //if the node has an existing left child, 
         //then we recursively call the `insert` method 
         //so the node is added further down the tree.
         else {
-         // console.log('inserting new left node with key -', key);
+          console.log('inserting new left node with key -', key);
             this.left.insert(key, value);
         }
     }
@@ -41,11 +41,11 @@ class BinarySearchTree {
     //then you do the same thing, but on the right-hand side.
     else {
         if (this.right == null) {
-          //console.log('creating new right BST with key -', key,' | parent = ', this.key);
-          this.right = new BinarySearchTree(key, value, this.key);
+          console.log('creating new right BST with key -', key,' | parent = ', this);
+          this.right = new BinarySearchTree(key, value, this);
         }
         else {
-          //console.log('inserting new right node with key -', key);
+          console.log('inserting new right node with key -', key);
             this.right.insert(key, value);
         }
     }
