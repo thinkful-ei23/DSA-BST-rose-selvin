@@ -148,26 +148,6 @@ class BinarySearchTree {
     return this.left._findMin();
   }
 
-  findheight(bst) {
-    let leftHeight = 0;
-    let rightHeight = 0;
-    for(let i=0; i<bst.length; i++) {
-      if(this.left !== null) {
-        leftHeight++;
-        console.log('left height: ', leftHeight);
-        console.log('this node is:' , this.key);
-        return leftHeight;
-      } else {
-        if (this.right !== null) {
-          rightHeight++;
-          console.log('hello right side');
-          console.log('right height: ', rightHeight);
-          return rightHeight;
-        }
-      }
-    }
-    // console.log(leftHeight, rightHeight);
-  }
-
 }
+ 
 module.exports = BinarySearchTree;
